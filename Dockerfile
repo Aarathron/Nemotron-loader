@@ -7,8 +7,10 @@ RUN apt update && apt install -y lshw curl
 # Install Ollama
 RUN curl -fsSL https://ollama.com/install.sh | sh
 
-# Download the nemotron model
-RUN ollama pull nemotron
+# Entrypoint script to run Ollama server and download model
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
 
 # Expose the port and set the host environment variable
 ENV OLLAMA_HOST=0.0.0.0
