@@ -1,5 +1,5 @@
 # Start from a base image with Python and CUDA (adjust for your GPU)
-FROM docker pull nvidia/cuda:12.6.2-cudnn-devel-ubuntu22.04
+FROM nvidia/cuda:12.6.2-cudnn-devel-ubuntu22.04
 
 # Install dependencies
 RUN apt update && apt install -y lshw curl
