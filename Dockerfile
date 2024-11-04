@@ -4,6 +4,7 @@ FROM nvidia/cuda:12.6.2-cudnn-devel-ubuntu22.04
 # Install dependencies
 RUN apt update && apt install -y lshw curl
 
+RUN cd ollama
 # Install Ollama
 RUN curl -fsSL https://ollama.com/install.sh | sh
 
